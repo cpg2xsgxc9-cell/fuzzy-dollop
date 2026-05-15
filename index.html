@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <div class="tabs">
+      <button class="tab active" data-mode="work">专注</button>
+      <button class="tab" data-mode="shortBreak">短休息</button>
+      <button class="tab" data-mode="longBreak">长休息</button>
+    </div>
+
+    <div class="timer-container">
+      <div class="progress-ring">
+        <svg viewBox="0 0 120 120">
+          <circle class="progress-ring-bg" cx="60" cy="60" r="54"></circle>
+          <circle class="progress-ring-fill" cx="60" cy="60" r="54"></circle>
+        </svg>
+        <div class="timer-display">
+          <span class="time">25:00</span>
+          <span class="status">准备开始</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-value" id="pomodoro-count">0</span>
+        <span class="stat-label">今日番茄</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="cycle-count">0</span>
+        <span class="stat-label">循环次数</span>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button class="btn btn-secondary" id="btn-reset" title="重置">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="1 4 1 10 7 10"></polyline>
+          <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+        </svg>
+      </button>
+      <button class="btn btn-primary" id="btn-toggle">
+        <span class="btn-text">开始</span>
+      </button>
+      <button class="btn btn-secondary" id="btn-skip" title="跳过">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="5 4 15 12 5 20 5 4"></polygon>
+          <line x1="19" y1="5" x2="19" y2="19"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="settings-row">
+      <label class="setting">
+        <input type="checkbox" id="auto-start">
+        <span>自动开始</span>
+      </label>
+      <label class="setting">
+        <input type="checkbox" id="sound-enabled" checked>
+        <span>提示音</span>
+      </label>
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
